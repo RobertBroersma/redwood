@@ -122,10 +122,11 @@ module.exports = (webpackEnv) => {
             },
             {
               test: /\.(js|jsx|ts|tsx)$/,
-              exclude: /(node_modules)/,
+              exclude: /node_modules/,
               use: {
                 loader: 'babel-loader',
                 options: {
+                  root: path.resolve(__dirname, '..', '..', '..'),
                   cacheDirectory: true,
                 },
               },
